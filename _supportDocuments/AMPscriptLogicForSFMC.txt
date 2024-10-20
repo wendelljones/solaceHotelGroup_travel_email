@@ -1,0 +1,25 @@
+AMPscript logic for SFMC
+
+Loyalty Points
+
+%%[
+SET @points = [PERSONALIZATION_2]
+
+IF @points < 1000 THEN
+  SET @imageURL = "https://image.member.americanexpress.com/lib/fe9813727661057875/m/1/demo_Progress_00.png"
+ELSEIF @points >= 1000 AND @points < 2000 THEN
+  SET @imageURL = "https://image.member.americanexpress.com/lib/fe9813727661057875/m/1/demo_Progress_01.png"
+ELSEIF @points >= 2000 AND @points < 3000 THEN
+  SET @imageURL = "https://image.member.americanexpress.com/lib/fe9813727661057875/m/1/demo_Progress_02.png"
+ELSEIF @points >= 3000 AND @points < 4000 THEN
+  SET @imageURL = "https://image.member.americanexpress.com/lib/fe9813727661057875/m/1/demo_Progress_03.png"
+ELSEIF @points >= 4000 AND @points < 5000 THEN
+  SET @imageURL = "https://image.member.americanexpress.com/lib/fe9813727661057875/m/1/demo_Progress_04.png"
+ELSEIF @points >= 5000 THEN
+  SET @imageURL = "https://image.member.americanexpress.com/lib/fe9813727661057875/m/1/demo_Progress_04.png"
+ELSE
+  SET @imageURL = "https://image.member.americanexpress.com/lib/fe9813727661057875/m/1/demo_Progress_00.png"
+ENDIF
+]%%
+
+<img src="%%=v(@imageURL)=%%" alt="Points Progress">
