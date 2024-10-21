@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="x-apple-disable-message-reformatting">
-    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no">
-    <meta name="color-scheme" content="light">
-    <meta name="supported-color-schemes" content="light">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="x-apple-disable-message-reformatting">
+	<meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no">
+	<meta name="color-scheme" content="light dark">
+	<meta name="supported-color-schemes" content="light dark">
     <title>Travel_Email</title>
     <!--[if gte mso 9]>
     <xml>
@@ -491,61 +491,6 @@
 
 </head>
 <body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #FFFFFF;">
-	<div id="personalizedContent"></div>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
-    <script>
-        // Function to load and parse the CSV
-        function loadCSVData() {
-            Papa.parse("data.csv", {
-                download: true,
-                header: true, // If your CSV has headers
-                complete: function(results) {
-					console.log(results.data); // Debugging line
-					processCSVData(results.data);
-                }
-            });
-        }
-
-        // Function to process the CSV data and generate the personalized email
-        function processCSVData(data) {
-    // Assume that each email only shows the first person (or any specific person)
-    let person = data[2]; // Change this index if you want to pick a different person
-
-    let firstName = person.PERSONALIZATION_1;
-    let points = parseInt(person.PERSONALIZATION_2, 10);
-	let date = person.PERSONALIZATION_3;
-    let imageURL;
-    // Logic to determine the correct image based on points
-    if (points < 1000) {
-        imageURL = "https://image.member.americanexpress.com/lib/fe9813727661057875/m/1/demo_Progress_00.png";
-    } else if (points >= 1000 && points < 2000) {
-        imageURL = "https://image.member.americanexpress.com/lib/fe9813727661057875/m/1/demo_Progress_01.png";
-    } else if (points >= 2000 && points < 3000) {
-        imageURL = "https://image.member.americanexpress.com/lib/fe9813727661057875/m/1/demo_Progress_02.png";
-    } else if (points >= 3000 && points < 4000) {
-        imageURL = "https://image.member.americanexpress.com/lib/fe9813727661057875/m/1/demo_Progress_03.png";
-    } else if (points >= 4000 && points < 5000) {
-        imageURL = "https://image.member.americanexpress.com/lib/fe9813727661057875/m/1/demo_Progress_04.png";
-    } else if (points >= 5000) {
-        imageURL = "https://image.member.americanexpress.com/lib/fe9813727661057875/m/1/demo_Progress_04.png";
-    } else {
-        imageURL = "https://image.member.americanexpress.com/lib/fe9813727661057875/m/1/demo_Progress_00.png";
-    }
-
-    // Display personalized content for the selected person
-    document.getElementById("emailContent").innerHTML = `
-        <img src="${imageURL}" alt="Points Progress" style="width: 100%; max-width: 200px;">
-    `;
-    document.getElementById("firstName").innerHTML = `
-        <h1 class="light" style="text-align: left; padding: 0px 0px; margin-top: 5px;">${firstName}<span style="font-style: normal">, you deserve a night away.</span></h1>
-    `;
-	document.getElementById("date").innerHTML += `<p class="textSecondary" style="padding: 0px 15px; margin: 0;">Progress toward your next free night as of ${date}</p>
-	`;
-}
-
-        // Load CSV data when the page is ready
-        loadCSVData();
-    </script>
   <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #FFFFFF;">
     <!--[if mso | IE]>
     <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #222222;">
@@ -575,22 +520,22 @@
 			<tbody>
 				<tr>
 					<td>
-						<table class="column-center-row" align="center" width="539" height="40" border="0" cellspacing="0" cellpadding="0" bgcolor="transparent" style="width:539px; background-color: transparent; height: 90;">
+						<table class="column-center-row" align="center" width="539" height="40" border="0" cellspacing="0" cellpadding="0" bgcolor="transparent" style="width:539px; max-width: 100%; background-color: transparent; height: 90;">
 							<tbody>
 								<tr>
 									<td class="" align="left">
-										<img src="https://image.member.americanexpress.com/lib/fe9813727661057875/m/1/demo_logo.png" width="120" height="auto" alt="Solace Hotel Group Logo" style="height: auto; vertical-align: middle;" border="0" />
+										<img src="https://image.member.americanexpress.com/lib/fe9813727661057875/m/1/demo_logo.png" width="120" height="auto" alt="Solace Hotel Group Logo" style="height: auto; width: 100%; max-width: 120px; vertical-align: middle;" border="0" />
 									</td>
 									<td class="" align="right">
 						<!--[if gte mso 9]>
-						<table class="" role="presentation" width="77" align="center" cellpadding="0" cellspacing="0" border="1" style="color: #FFFFFF; background-color: #063D39 !important;">
+						<table class="" role="presentation" width="77pt" align="right" cellpadding="0" cellspacing="0" border="1" style="color: #FFFFFF; background-color: transparent !important;">
 						<tr>
-						<td width="100%" align="center">
+						<td width="100%" align="center" style="width: 100%; max-width: 77px">
 						<![endif]-->
 						<table role="presentation" align="right" border="0" cellpadding="0" cellspacing="0" style="vertical-align: middle; padding: 0px 15px;">
 						<tbody>
 						<tr>
-						<td style="background-color: transparent !important;" valign="center" align="center" bgcolor="transparent"><a href="https://www.shiftparadigm.com/" target="_blank" style="background-color: transparent; border:1pt solid #ffffff; border-radius:4pt; font-family: 'Helvetica Neue', Helvetica, Arial, Gotham, 'sans-serif'; font-size: 14pt; font-weight: 300; width: 77pt;-webkit-text-size-adjust:none;line-height:40px; text-decoration: none; color: #ffffff !important; display:inline-block; mso-padding-alt:0;">
+						<td style="background-color: transparent !important;" valign="center" align="center" bgcolor="transparent"><a href="https://www.shiftparadigm.com/" target="_blank" style="background-color: transparent; border:1pt solid #ffffff; border-radius:4px; font-family: 'Helvetica Neue', Helvetica, Arial, Gotham, 'sans-serif'; font-size: 14pt; font-weight: 300; width: 77pt;-webkit-text-size-adjust:none;line-height:40px; text-decoration: none; color: #ffffff !important; display:inline-block; mso-padding-alt:0;">
 						<!--[if mso]>
 						<i style="letter-spacing: 25px; width: 77pt; mso-font-width:-100%;mso-text-raise:30pt;">&nbsp;</i>
 						<![endif]-->
@@ -628,7 +573,7 @@
                     <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                         <tr>
                             <td class="h1Small" style="padding: 0px 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
-                                <h1 class="light" style="text-align: left; padding: 0px 15px; margin-top: 5px;"><div id="firstName"><span style="font-style: normal">, you deserve a night away.</span></div></h1>
+                                <h1 class="light" style="text-align: left; padding: 0px 15px; margin-top: 5px;">%%FirstName%%<span style="font-style: normal">, you deserve a night away.</span></h1>
 								<p class="" style="text-align: left; font-family: 'Helvetica Neue', Helvetica, Arial, Gotham, 'sans-serif'; font-size: 16pt; font-weight: 200; padding: 0px 15px;">Explore the latest packages and offers at Solace Hotel Group properties.</p>
                             </td>
                         </tr>
@@ -637,16 +582,16 @@
                                 <table align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
                                     <tr>
             <!-- View Properties Button : BEGIN -->
-								<td class="stack-column-center-vp" align="right" width="620" style="padding: 0px 0px 40px 15px;">
+								<td class="stack-column-center-vp" align="right" width="620" style="padding: 0px 0px 40px 15px; ">
 									<!--[if gte mso 9]>
-									<table class="" role="presentation" width="77" align="center" cellpadding="0" cellspacing="0" border="1" style="color: #FFFFFF; background-color: #063D39 !important;">
+									<table class="" role="presentation" width="240" align="left" cellpadding="0" cellspacing="0" border="1" style="color: #FFFFFF; background-color: #063D39 !important; width: 100%; max-width: 240px;">
 									<tr>
 									<td width="100%" align="center">
 									<![endif]-->
 									<table role="presentation" align="left" border="0" cellpadding="0" cellspacing="0" style="vertical-align: middle; padding: 0px 15px;">
 									<tbody>
 									<tr>
-									<td style="background-color: #063D39 !important;" valign="center" align="center" bgcolor="#063D39"><a href="#" target="_blank" style="background-color: #063D39; border:1pt solid #063D39; border-radius:4pt; font-family: 'Helvetica Neue', Helvetica, Arial, Gotham, 'sans-serif'; font-size: 14pt; font-weight: 300; width: 240pt;-webkit-text-size-adjust:none;line-height:40px; text-decoration: none; color: #ffffff !important; display:inline-block; mso-padding-alt:0;">
+									<td style="background-color: #063D39 !important;" valign="center" align="center" bgcolor="#063D39"><a href="https://www.shiftparadigm.com/" target="_blank"style=" border:1px solid #063D39; border-radius: 30px; background-color: #063D39; font-family: 'Helvetica Neue', Helvetica, Arial, Gotham, 'sans-serif'; font-size: 14pt; font-weight: 300; width: 240px;-webkit-text-size-adjust:none;line-height:40px; text-decoration: none; color: #ffffff !important; display:inline-block; mso-padding-alt:0;">
 									<!--[if mso]>
 									<i style="letter-spacing: 25px; width: 77pt; mso-font-width:-100%;mso-text-raise:30pt;">&nbsp;</i>
 									<![endif]-->
@@ -685,12 +630,12 @@
 	                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
 							<tr>
 								<td dir="ltr" valign="top" style="">
-											<div id="date" style="padding: 10px;"></div>
+									<p class="textSecondary" style="padding: 0px 15px; margin: 0;">Progress toward your next free night as of %%Date%%</p>
 								</td>
 							</tr>
 	                                <tr>
-	                                    <td dir="ltr" valign="top" style="padding: 10px 20px;">
-											<div id="emailContent" style="padding: 10px;"></div>
+	                                    <td dir="ltr" valign="top" style="padding: 10px  10px  20px 0px;">
+	                                        <img class="center-on-narrow" src="%%PointsBalance%%" width="268" height="48" alt="PZN_X points value 170x268" border="0" style="height: auto; background: transparent; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #56807C; border: 1px solid #56807C;">
 	                                    </td>
 	                                </tr>
 	                            </table>
@@ -702,7 +647,7 @@
 	                                <tr>
 	                                    <td dir="ltr" valign="top" style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; padding: 10px; text-align: left;" class="center-on-narrow">
 										<p class="textPrimary" style="padding: 0; margin: 0; text-align: left;">Solace Loyalty Points</p>
-										<p style="padding: 0; margin: 0 3; font-size: 15px; font-weight: 300; text-align: left;">Earn <a href="https://www.shiftparadigm.com/" target="_blank">3X points</a> at over 3,000 Solace Hotel Group properties to use toward a free night.</p>
+										<p style="padding: 0; margin: 0 3; font-size: 15px; font-weight: 300; text-align: left;">Earn <a href="https://www.shiftparadigm.com/" target="_blank"><span style="color: #56807C !important;">3X points</span></a> at over 3,000 Solace Hotel Group properties to use toward a free night.</p>
 										<!-- Button : END -->
 	                                    </td>
 	                                </tr>
@@ -1045,7 +990,7 @@
 	                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="295px" height="188px" style="max-width: 295px; margin: 0; padding: 0; background-color: #FFFFFF; vertical-align: top;">
 									<tr>
 										<td>
-	                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" height="auto" style="max-width: 275px; margin: 0px; padding: 0; background-color: transparent; height: auto; vertical-align: top;">
+	                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" height="auto" style="width: 100%; max-width: 275px; margin: 0px; padding: 0; background-color: transparent; height: auto; vertical-align: top;">
 									<tr>
 										<td>
 											<tr>											
